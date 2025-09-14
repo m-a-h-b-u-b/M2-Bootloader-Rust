@@ -1,0 +1,3 @@
+Bootloader: 0x08000000 - 0x08003FFF
+Application: 0x08004000 - 0x080FFFFF
+Backup: 0x08100000 - 0x08103FFF

@@ -1,0 +1,21 @@
+name: Build Bootloader & App
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+      - name: Build Bootloader
+        run: cargo build --workspace --package bootloader
+      - name: Build App
+        run: cargo build --workspace --package app
